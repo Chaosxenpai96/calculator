@@ -1,0 +1,82 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class Calculator
+{
+    public static void Main(string[] args)
+    {
+        int firstNumber,secondNumber;
+        String UserChoice;
+        while (true)
+        {
+            Console.WriteLine("Enter the first number:");
+            while (!int.TryParse(Console.ReadLine(), out firstNumber))
+            {
+                Console.WriteLine("Invalid input. Please enter a whole number.");
+            }
+            Console.WriteLine("Enter the second number:");
+            while (!int.TryParse(Console.ReadLine(), out secondNumber))
+            {
+                Console.WriteLine("Invalid input. Please enter a whole number.");
+            }
+        
+            Console.WriteLine("Select an operation:");
+            Console.WriteLine("1. Addition (+)");
+            Console.WriteLine("2. Subtraction (-)");
+            Console.WriteLine("3. Multiplication (*)");
+            Console.WriteLine("4. Division (/)");
+            Console.WriteLine("5. Modulo (%)");
+            Console.WriteLine("6. Exit (=)");
+            
+            UserChoice = Console.ReadLine();
+            if(UserChoice == "=");
+            {
+                Console.WriteLine("\nExiting Program");
+                break;
+            }
+            switch(UserChoice)
+            {
+                case = "+":
+                Console.WriteLine($"Result: {firstNumber + secondNumber}");
+                break;
+                
+                case = "-":
+                Console.WriteLine($"Result: {firstNumber - secondNumber}");
+                break;
+                
+                case = "*":
+                Console.WriteLine($"Result: {firstNumber * secondNumber}");
+                break;
+                 
+                case = "/":
+                if(secondNumber != 0);
+                {
+                    Console.WriteLine($"Result: {firstNumber / secondNumber}");
+                }
+                else
+                {
+                    Console.WriteLine("Number is not divisble");
+                }
+                break;
+            case "%":
+                
+                if (secondNumber != 0)
+                {
+                  Console.WriteLine($"Result: {firstNumber % secondNumber}");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
+                }
+                break;
+            
+            default:
+            Console.WriteLine("Invalid operation. Please try again.");
+            break;
+            }
+        }
+        
+    }
+}
