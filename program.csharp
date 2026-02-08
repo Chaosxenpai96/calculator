@@ -1,7 +1,5 @@
 using System;
 
-public class Calculator
-{
     public static void Main(string[] args)
     {
         int firstNumber, secondNumber;
@@ -33,50 +31,18 @@ public class Calculator
 
             if (userChoice == "=")
             {
-                Console.WriteLine("\nExiting Program");
+                Calculate(firstNumber, secondNumber, userChoice);
                 break;
             }
 
-            switch (userChoice)
+            double? result = Calculate(firstNumber, secondNumber, userChoice);
+
+            if (result != null)
             {
-                case "+":
-                    Console.WriteLine($"Result: {firstNumber + secondNumber}");
-                    break;
-
-                case "-":
-                    Console.WriteLine($"Result: {firstNumber - secondNumber}");
-                    break;
-
-                case "*":
-                    Console.WriteLine($"Result: {firstNumber * secondNumber}");
-                    break;
-
-                case "/":
-                    if (secondNumber != 0)
-                    {
-                        Console.WriteLine($"Result: {firstNumber / secondNumber}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: Division by zero is not allowed.");
-                    }
-                    break;
-
-                case "%":
-                    if (secondNumber != 0)
-                    {
-                        Console.WriteLine($"Result: {firstNumber % secondNumber}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: Division by zero is not allowed.");
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid operation. Please try again.");
-                    break;
+                Console.WriteLine($"Result: {result}");
             }
+
+            Console.WriteLine();
         }
     }
 }
